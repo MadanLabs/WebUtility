@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>INPUT SOLO NUMERICA</title>
+		
+		<script type="text/javascript">
+		
+		function onKeyNumeric(e) {
+			
+			// Accetto solo numeri e backspace <-
+			if ( ((e.keyCode >= 48) && (e.keyCode <= 57)) || (e.keyCode == 8) ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	
+		</script>
+	</head>
+	<body>
+		Solo valori numerici: <input type="text" name="CampoNumerico" value="" onkeydown="return onKeyNumeric(event);" />
+	</body>
+</html>

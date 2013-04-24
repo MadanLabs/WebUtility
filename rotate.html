@@ -1,0 +1,20 @@
+<style type="text/css">
+#image{
+  margin:100px 100px;
+}
+</style>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#image").rotate({
+		angle: 0,
+		animateTo: 360,
+		callback: end
+	});
+});
+function end() {
+	alert('Finito');
+}
+</script>
+<img src="https://www.google.com/images/srpr/logo3w.png" id="image" />

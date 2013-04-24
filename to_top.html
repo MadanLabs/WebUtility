@@ -1,0 +1,40 @@
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function() {
+    function scrollContainer() {
+        $('html, body').animate({
+			scrollTop: 0
+		}, 500);
+    }
+     
+    function scriviCookie(nomeCookie,valoreCookie,durataCookie) {
+		var scadenza = new Date();
+		var adesso = new Date();
+		scadenza.setTime(adesso.getTime() + (parseInt(durataCookie) * 60000));
+		document.cookie = nomeCookie + '=' + escape(valoreCookie) + '; expires=' + scadenza.toGMTString() + '; path=/';
+    }
+	var patternMobileBrowser = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Dolfin/i;
+	if(!patternMobileBrowser.test(navigator.userAgent)) {
+		if(document.cookie.indexOf("hide_arrow") == -1) {
+			$("html").append("<img id='toTop' style='position: fixed; bottom: 15px; right: 15px; display: none; cursor: pointer; z-index: 100;' title='Click destro per nascondere la freccia per 48h' src='http://i.imgur.com/vR8H5lc.png' />");
+			$(window).scroll(function() {
+				if($(window).scrollTop() == 0) {
+					$("#toTop").fadeOut(250);
+				} else {
+					if($("#toTop").css("display") == "none") {
+						$("#toTop").fadeIn(500);
+					}
+				}
+			});
+			$("#toTop").on("click", function() {
+				scrollContainer();
+			});
+			$("#toTop").bind("contextmenu", function(e) {
+				e.preventDefault();
+				$(this).remove();
+				scriviCookie("hide_arrow", "yes", 2880);
+			});
+		}
+	}
+});
+</script>

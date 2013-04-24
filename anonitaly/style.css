@@ -1,0 +1,124 @@
+body {
+background: #000 url(http://mybeat.it/anonitaly/images/bg.jpg) no-repeat fixed top center;
+font-family: verdana, arial, san-serif;
+color: #AAAAAA;
+}
+a:link, a:visited, a:active {
+     color: #E0261A;
+     text-decoration: none;
+}
+
+a:hover {
+     color: #FF7373;
+     text-decoration:none;
+}
+
+#header a:hover {
+     text-decoration: underline;
+	 color: #E0261A;
+}
+
+#container {
+width: 807px;
+height: auto;
+background: #111;
+border: 1px solid #333;
+margin: auto;
+padding-top: 15px;
+}
+
+#header {
+text-align: center;
+font-weight: bold;
+margin: 10px auto 10px auto;
+font-size: 35px;
+letter-spacing: -3px;
+}
+
+.title a:link, .title a:visited, .title a:active {
+color: #fff;
+}
+
+.title a:hover {
+color: #E0261A;
+text-decoration: underline;
+}
+
+.newstitle {
+background: url(http://mybeat.it/anonitaly/images/newstitle.png) no-repeat;
+width: 859px;
+height: 44px;
+margin-left: -9px;
+padding-top: 9px;
+font-size: 15px;
+color: #fff;
+}
+
+.title {
+padding-left: 50px;
+font-weight: bold;
+}
+
+.newstext {
+padding-left: 15px;
+padding-right: 15px;
+text-align: justify;
+font-size: 14px;
+margin-bottom: 45px;
+}
+
+#cp {
+text-align: center;
+font-size: 9px;
+font-weight: bold;
+}
+
+input[type="text"] {
+color: #666666;
+background: #111;
+border: 1px solid #333;
+}
+
+input[type="submit"] {
+background: #111;
+border: 1px solid #333;
+padding: 5px 10px 5px 10px;
+font-weight: bold;
+color: white;
+}
+
+input[type="text"]:hover, input[type="submit"]:hover {
+border-color: silver;
+background: #222;
+}
+
+.domanda {
+color: #fff;
+font-weight: bold;
+}
+
+.altro {
+font-size: 10px;
+}
+
+#mini {
+width: 250px;
+height: auto;
+background: #111;
+border: 1px solid #333;
+padding: 10px;
+position: fixed;
+bottom: 15px;
+left: 15px;
+font-size: 12px;
+text-align: justify;
+}
+
+.quote {
+width: 90%;
+font-size: 12px;
+background: #111;
+border: 1px solid #333;
+padding: 10px;
+font-style: italic;
+}

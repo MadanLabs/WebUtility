@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<product productid="profile_username_logs" active="1">
+	<title>Username Logs</title>
+	<description>Log dei cambiamenti username</description>
+	<version>1.0</version>
+	<url>http://www.madanlabs.it/</url>
+	<versioncheckurl />
+	<dependencies>
+	</dependencies>
+	<codes>
+	</codes>
+	<templates>
+		<template name="memberinfo_block_usernamelogs" templatetype="template" date="0" version="1.0"><![CDATA[
+<div id="usernamelogs" class="block">	
+	<h5 class="blocksubhead smaller">{vb:rawphrase usernamelogs_block_title}</h5>
+	<div class="blockbody">
+			<div class="blockrow">
+				{vb:raw displaylogs}
+			</div>
+	</div>
+</div>
+<div class="underblock"></div>
+]]>
+		</template>
+	</templates>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+	</stylevars>
+	<plugins>
+		<plugin active="1" executionorder="5">
+			<title>UsernameLogs Template Cache</title>
+			<hookname>cache_templates</hookname>
+			<phpcode><![CDATA[
+				$cache = array_merge((array)$cache,array(
+					'memberinfo_block_usernamelogs',					
+				));
+]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>UsernameLog Logs</title>
+			<hookname>member_build_blocks_start</hookname>
+			<phpcode><![CDATA[
+			$userid = intval($vbulletin->GPC['userid']);
+			$selectLogs = $db->query_read("SELECT * FROM ".TABLE_PREFIX."userlog WHERE userid=$userid ORDER BY id DESC");
+			if($db->affected_rows($selectLogs) == 0) {
+				$usernamelogs = "Nessun log da mostrare.";
+			} else {
+				$usernamelogs = "<dl>";
+				while($log = $db->fetch_array($selectLogs)) {
+					$usernamelogs .= "<dt>[".date($vbulletin->options['dateformat'], $log['dateline'])."] ".$log['oldusername']." diventa <b>".$log['newusername']."</b></dt>";
+				}
+				$usernamelogs .= "</dl>";
+			}
+			$templater = vB_Template::create('memberinfo_block_usernamelogs');
+			$templater->register('displaylogs', $usernamelogs);
+			$template_hook[profile_sidebar_last] .= $templater->render();
+]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>UsernameLog Logs Table creation</title>
+			<hookname>global_start</hookname>
+			<phpcode><![CDATA[
+			$db->query_write("CREATE TABLE IF NOT EXISTS ".TABLE_PREFIX."userlog (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, userid INT NOT NULL, oldusername VARCHAR(50) NOT NULL, newusername VARCHAR(50) NOT NULL, dateline INT NOT NULL)") or die(mysql_error());
+]]></phpcode>
+		</plugin>
+	</plugins>
+	<phrases>
+		<phrasetype name="GLOBAL" fieldname="global">
+			<phrase name="usernamelogs_block_title" date="0" version="1.0"><![CDATA[Username Logs]]></phrase>
+		</phrasetype>
+	</phrases>
+	<options>
+	</options>
+	<helptopics>
+	</helptopics>
+	<cronentries>
+	</cronentries>
+	<faqentries>
+	</faqentries>
+</product>

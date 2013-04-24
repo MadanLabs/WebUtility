@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Box Popup</title>
+<style>
+body {
+margin: 0;
+}
+
+#overall {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   background: #333;
+}
+
+#innerel {
+   width: 530px;
+   height: 530px;
+   background: #fff;
+   margin: 0px auto;
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+function mostraBox() {
+	var margin_h = ($(window).height() - 530)/2; // 530 è la dimensione in altezza del box che compare, se vuoi cambiarlo ricorda di modificare il CSS!
+	$("body").prepend("<div id='overall'><div id='innerel'><a href='javascript:chiudiBox();'>Chiudi box</a></div></div>"); // Al posto di QUA IL CONTENUTO bisognerà inserire i propri contenuti.
+	$("#innerel").css("margin-top", margin_h); // Impostiamo il margin-top del box calcolando in margin_h
+}
+
+function chiudiBox() {
+	$("#overall").fadeOut(500); // 500 è la velocità con cui scomparirà espressa in millisecondi, 1000ms = 1sec
+}
+</script>
+</head>
+<body>
+<a href="javascript:mostraBox();">Apri box!</a>
+</body>
+</html>

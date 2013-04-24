@@ -1,0 +1,120 @@
+#buttons {
+position: relative;
+left: 59px;
+top: 11px;
+}
+
+.bbtn {
+float: left;
+margin-right: 10px;
+cursor: pointer;
+}
+
+#laterale {
+background: url(http://mybeat.it/anonitaly/editor/images/laterale.png);
+width: 37px;
+height: 182px;
+float: left;
+}
+
+#sopra {
+background: url(http://mybeat.it/anonitaly/editor/images/sopra.png);
+width: 576px;
+height: 48px;
+}
+
+#post {
+margin-top: -1px;
+width: 533px;
+height: 177px;
+resize: none;
+  padding: 2px;
+        text-align: left;
+        border: 1px solid #333333;
+        border-collapse: collapse;
+        background-color: #222222;
+        color: #666666;
+}
+
+#bold, #italic, #underline, #image, #youtube, #link, #quote, #code, #size {
+width: 25px;
+height: 25px;
+}
+
+select {
+background-color: #222;
+color: #666;
+border: 1px solid #333;
+}
+
+#bold {
+background: url(http://mybeat.it/anonitaly/editor/images/bold.png);
+}
+
+#italic {
+background: url(http://mybeat.it/anonitaly/editor/images/italic.png);
+}
+
+#underline {
+background: url(http://mybeat.it/anonitaly/editor/images/underline.png);
+}
+
+#image {
+background: url(http://mybeat.it/anonitaly/editor/images/image.png);
+}
+
+#youtube {
+background: url(http://mybeat.it/anonitaly/editor/images/youtube.png);
+}
+
+#link {
+background: url(http://mybeat.it/anonitaly/editor/images/link.png);
+}
+
+#quote {
+background: url(http://mybeat.it/anonitaly/editor/images/quote.png);
+}
+
+#code {
+background: url(http://mybeat.it/anonitaly/editor/images/code.png);
+}
+
+#size {
+background: url(http://mybeat.it/anonitaly/editor/images/size.png);
+}
+
+#bold:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/bold_hover.png);
+}
+
+#italic:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/italic_hover.png);
+}
+
+#underline:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/underline_hover.png);
+}
+
+#image:hover{
+background: url(http://mybeat.it/anonitaly/editor/images/image_hover.png);
+}
+
+#youtube:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/youtube_hover.png);
+}
+
+#link:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/link_hover.png);
+}
+
+#quote:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/quote_hover.png);
+}
+
+#code:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/code_hover.png);
+}
+
+#size:hover {
+background: url(http://mybeat.it/anonitaly/editor/images/size_hover.png);
+}

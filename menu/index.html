@@ -1,0 +1,39 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#mymenu li").hover(function() {
+		switch($(this).attr("class")) {
+			case 'home':
+				$(this).find("div").css("background-position","0 -90px");
+			break;
+			case 'prodotti':
+				$(this).find("div").css("background-position","0 -180px");
+			break;
+			case 'portfolio':
+				$(this).find("div").css("background-position","0 -270px");
+			break;
+			case 'chi-siamo':
+				$(this).find("div").css("background-position","0 -360px");
+			break;
+			case 'contatti':
+				$(this).find("div").css("background-position","0 -450px");
+			break;
+		}
+		$(this).find("div").fadeIn("slow");
+	}, function() {
+		$(this).find("div").fadeOut("normal");
+	});
+});
+</script>
+<style type="text/css">
+ul#mymenu {margin:0; padding:0; list-style:none; clear:both; position: absolute; margin-left: 450px; margin-top: 30px;}
+#mymenu li {margin-left: 20px; overflow:hidden; display:inline; float:left; background:url(http://www.slimmer.it/img/bbmenu.png) no-repeat; display:block; width: 70px; height: 90px; background-position: 0 0;}
+#mymenu li div {background: url(http://www.slimmer.it/img/bbmenu.png); display: none; width: 70px; height: 90px;}
+</style>
+<ul id="mymenu">
+    <li class="home"><a href="http://www.slimmer.it/index.php"><div></div></a></li>
+	<li class="prodotti"><a href="http://www.slimmer.it/prodotti/siti-web.html"><div></div></a></li>
+	<li class="portfolio"><a href="http://www.slimmer.it/portfolio.php"><div></div></a></li>
+	<li class="chi-siamo"><a href="http://www.slimmer.it/chi-siamo.php"><div></div></a></li>
+	<li class="contatti"><a href="http://www.slimmer.it/contatti.php"><div></div></a></li>
+</ul>
